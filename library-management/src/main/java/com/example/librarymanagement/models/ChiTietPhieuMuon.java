@@ -1,4 +1,5 @@
-package com.example.librarymanagement.Model;
+// ChiTietPhieuMuon.java
+package com.example.librarymanagement.models;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,22 +11,21 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
+@Table(name = "chi_tiet_phieu_muon")
 public class ChiTietPhieuMuon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "maChiTietPhieuMuon", nullable = false)
+    @Column(name = "ma_chi_tiet_phieu_muon")
     Integer maChiTietPhieuMuon;
+
+    @Column(name = "so_luong")
     int soLuong = 1;
 
-    // Quan hệ với Phiếu mượn
     @ManyToOne
-    @JoinColumn(name = "maPhieuMuon", referencedColumnName = "maPhieuMuon")
+    @JoinColumn(name = "ma_phieu_muon", referencedColumnName = "ma_phieu_muon")
     PhieuMuon phieuMuon;
 
-    // Quan hệ với Sách
     @ManyToOne
-    @JoinColumn(name = "maSach", referencedColumnName = "maSach")
+    @JoinColumn(name = "ma_sach", referencedColumnName = "ma_sach")
     Sach sach;
-
-
 }

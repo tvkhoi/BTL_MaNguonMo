@@ -1,14 +1,11 @@
-package com.example.librarymanagement.Model;
-
+// DocGia.java
+package com.example.librarymanagement.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Getter
 @Setter
@@ -16,17 +13,25 @@ import java.util.List;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
+@Table(name = "doc_gia")
 public class DocGia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "maDocGia", nullable = false)
+    @Column(name = "ma_doc_gia")
     Integer maDocGia;
-    String tenDocGia;
-    String Email;
-    String sdt;
-    String diaChi;
-    Date ngayTao = new Date();
 
-    @OneToMany(mappedBy = "docGia", cascade = CascadeType.ALL)
-    List<PhieuMuon> phieuMuon = new ArrayList<>();
+    @Column(name = "ten_doc_gia")
+    String tenDocGia;
+
+    @Column(name = "email")
+    String Email;
+
+    @Column(name = "sdt")
+    String sdt;
+
+    @Column(name = "dia_chi")
+    String diaChi;
+
+    @Column(name = "ngay_tao")
+    Date ngayTao = new Date();
 }
