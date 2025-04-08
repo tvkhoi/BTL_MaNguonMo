@@ -1,8 +1,8 @@
 package com.example.librarymanagement.controllers;
 
 import com.example.librarymanagement.models.ChiTietPhieuMuon;
-import com.example.librarymanagement.services.IChiTietPhieuMuonService;
 import com.example.librarymanagement.dto.ApiResponse;
+import com.example.librarymanagement.services.implement.ChiTietPhieuMuonService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/chitietphieumuon")
 public class ChiTietPhieuMuonController {
-    IChiTietPhieuMuonService chiTietPhieuMuonService;
+    ChiTietPhieuMuonService chiTietPhieuMuonService;
 
     @GetMapping
     public ResponseEntity<List<ChiTietPhieuMuon>> getPhieuMuon() {

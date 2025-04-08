@@ -3,8 +3,8 @@ package com.example.librarymanagement.controllers;
 import com.example.librarymanagement.exception.ApiException;
 import com.example.librarymanagement.exception.ErrorCode;
 import com.example.librarymanagement.models.PhieuMuon;
-import com.example.librarymanagement.services.IPhieuMuonService;
 import com.example.librarymanagement.dto.ApiResponse;
+import com.example.librarymanagement.services.implement.PhieuMuonService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -19,7 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/phieumuon")
 public class PhieuMuonController {
-    IPhieuMuonService phieuMuonService;
+    PhieuMuonService phieuMuonService;
 
     @GetMapping
     public ResponseEntity<List<PhieuMuon>> getPhieuMuon() {
