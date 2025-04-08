@@ -26,5 +26,5 @@ INSERT INTO chi_tiet_phieu_muon (so_luong, ma_phieu_muon, ma_sach) VALUES
                                                                        (1, 4, 4),
                                                                        (1, 5, 5);
 
-select * from chi_tiet_phieu_muon    ;
+select * from phieu_muon;
 

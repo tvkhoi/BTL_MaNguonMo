@@ -8,4 +8,5 @@ public interface IPhieuMuonService {
     List<PhieuMuon> findAll();
 
     PhieuMuon save(PhieuMuon phieuMuon);
+    PhieuMuon update(Integer id);
 }
