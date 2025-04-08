@@ -3,9 +3,10 @@ package com.example.librarymanagement.reponsitories;
 import com.example.librarymanagement.models.Sach;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ISachRepository extends JpaRepository<Sach, Integer> {
+import java.util.Optional;
 
-   // List<Sach> findByMaSach(Integer maSach);
+public interface ISachRepository extends JpaRepository<Sach, Integer> {
+    Optional<Sach> findByTieuDeAndTacGia(String tieude, String tacgia);
 
 
 }
